@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const posts = await db.getAllPosts()
 
-    res.json({ posts: posts.map((post) => post.name) })
+ res.json({ posts })
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong with getting all posts' })
