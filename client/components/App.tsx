@@ -1,18 +1,12 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import Layout from './Layout.tsx'
 
-function App() {
-  const { data } = useFruits()
+// This is our App component it should either show a login/sign up page
+// or the layout that contains everything to do with the site.
 
+export default function App() {
   return (
     <>
-      <div className="app">
-        <h1 className="text-3xl font-bold underline">
-          Fullstack Boilerplate - with Fruits!
-        </h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
-      </div>
+      <Layout />
     </>
   )
 }
-
-export default App

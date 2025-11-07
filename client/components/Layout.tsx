@@ -5,11 +5,14 @@ export default function Layout() {
     <>
       <header>
         <h1>Fullstack Boilerplate - with Fruits!</h1>
+        {/* header component here */}
       </header>
+      <nav>{/* nav component here */}</nav>
       <main>
+        {/* this will change based on nav */}
         <Outlet />
       </main>
-      <footer></footer>
+      <footer>{/* footer component here */}</footer>
     </>
   )
 }
