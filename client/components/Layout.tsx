@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router'
+import NavBar from './NavBar'
 // import WeatherWidget from "./WeatherWidget"
 
 export default function Layout() {
