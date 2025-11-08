@@ -8,13 +8,11 @@ import NavBar from './NavBar'
 // Possibly make header/footer a seperate component to keep it tidy in this one?
 export default function Layout() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col bg-slate-100 text-slate-900">
       <header className="p-4 text-center text-xl font-bold">
         <h1>DevConnect</h1>
         {/* (optional header content here) */}
       </header>
-
-   
 
       <main className="p-4">
         <Outlet />
@@ -23,6 +21,6 @@ export default function Layout() {
       <footer className="p-4 text-center text-xs opacity-60">
         {/* Footer content here later */}
       </footer>
-    </>
+    </div>
   )
 }
