@@ -1,9 +1,8 @@
 function HomeFeed() {
-
   return (
     <>
       <div className="app">
-        <p>Just a placeholder</p>
+        <p>Just a placeholder homefeed</p>
       </div>
     </>
   )
