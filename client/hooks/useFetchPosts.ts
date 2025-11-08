@@ -3,7 +3,7 @@ import {
   useMutation,
   useQueryClient,
   MutationFunction,
-  QueryKey
+
 } from '@tanstack/react-query'
 import { getAllPosts, getPostById} from '../apis/posts.ts'
 

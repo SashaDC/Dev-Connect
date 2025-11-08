@@ -1,5 +1,5 @@
 import db from './connection.ts'
-import { Post, newPost } from '../../models/posts'
+import { Post, NewPost } from '../../models/posts'
 
 export async function getAllPosts() {
   const posts  = await db('posts').select()
@@ -11,7 +11,7 @@ export async function getPostById(id: number | string) {
   return posts as Post
 }
 
-export async function addPost(data: postData) {
+export async function addPost(data: NewPost) {
   const [id] = await db('posts').insert(data)
   return id
 }

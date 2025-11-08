@@ -17,11 +17,3 @@ export interface WeatherData {
   current: WeatherCurrent;
   hourly: WeatherHourly;
 }
-
-
-	// "latitude": -42,
-	// "longitude": 174,
-	// "hourly": ["temperature_2m", "precipitation", "precipitation_probability"],
-	// "current": ["temperature_2m", "wind_speed_10m", "is_day", "precipitation"],
-	// "timezone": "Pacific/Auckland",
-	// "forecast_days": 1,
