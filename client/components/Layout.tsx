@@ -14,8 +14,6 @@ export default function Layout() {
         {/* (optional header content here) */}
       </header>
 
-   
-
       <main className="p-4">
         <Outlet />
       </main>
