@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-import NavBar from './NavBar'
+// import NavBar from './NavBar'
 // import WeatherWidget from "./WeatherWidget"
 // This layout component holds all basic components
 // The outlet is for the main content such as posts, feed, etc.
@@ -13,8 +13,6 @@ export default function Layout() {
         <h1>DevConnect</h1>
         {/* (optional header content here) */}
       </header>
-
-   
 
       <main className="p-4">
         <Outlet />

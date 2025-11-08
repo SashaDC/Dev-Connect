@@ -1,4 +1,5 @@
-import { useAuth0 } from '@auth0/auth0-react'
+// import { useAuth0 } from '@auth0/auth0-react' // revert back on launch.
+import { useMockableAuth } from '../hooks/useMockAuth' // delete when ready for launch
 import { useEffect } from 'react'
 import Layout from './Layout.tsx'
 
@@ -6,8 +7,12 @@ import Layout from './Layout.tsx'
 // or the layout that contains everything to do with the site.
 
 export default function App() {
-  const { isAuthenticated, loginWithRedirect, isLoading, logout } = useAuth0()
+  // const { isAuthenticated, loginWithRedirect, isLoading, logout } = useAuth0()
+  // To this:
+  const { isAuthenticated, loginWithRedirect, isLoading, logout } =
+    useMockableAuth()
 
+  // LEFT BELOW CODE THE SAME - BYPASS FOR AUTH0 DURING DEV
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
       loginWithRedirect()
