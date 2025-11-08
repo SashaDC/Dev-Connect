@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-// import WeatherWidget from "./WeatherWidget"
+import WeatherWidget from "./WeatherWidget"
 // This layout component holds all basic components
 // The outlet is for the main content such as posts, feed, etc.
 
@@ -13,7 +13,11 @@ export default function Layout() {
         {/* (optional header content here) */}
       </header>
 
-   
+      </div>
+        {/* Right side: Weather widget */}
+        <div className="order-first md:order-last">
+          <WeatherWidget />
+        </div>
 
       <main className="p-4">
         <Outlet />
