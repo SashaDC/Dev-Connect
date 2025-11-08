@@ -3,11 +3,14 @@ import * as Path from 'node:path'
 
 import postRoutes from './routes/posts.ts'
 
+import groupsRoutes from './routes/groups.ts'
+
 const server = express()
 
 server.use(express.json())
 
 server.use('/api/v1/posts', postRoutes)
+server.use('/api/v1/groups', groupsRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

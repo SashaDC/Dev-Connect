@@ -12,6 +12,7 @@ export default function Layout() {
       <header className="p-4 text-center text-xl font-bold">
         <h1>DevConnect</h1>
         {/* (optional header content here) */}
+        <NavBar />
       </header>
 
       <main className="p-4">

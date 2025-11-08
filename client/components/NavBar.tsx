@@ -1,4 +1,4 @@
-import { link } from 'react-router'
+import { Link } from 'react-router'
 
 export default function NavBar() {
   return (
@@ -8,6 +8,9 @@ export default function NavBar() {
       </Link>
       <Link className="hover:opacity-80" to="/groups">
         Groups
+      </Link>
+      <Link className="hover:opacity-80" to="/groups/new">
+        New Group
       </Link>
       <Link className="cursor-not-allowed opacity-50 hover:opacity-80" to="#">
         My Profile
