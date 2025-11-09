@@ -11,3 +11,11 @@ export async function getUserById(id: number) {
   const response = await request.get(`${rootURL}/${id}`)
   return response.body
 }
+
+export async function syncUser({ token, ...userData }) {
+  const response = await request
+    .post('/api/v1/users/sync')
+    .set('Authorization', `Bearer ${token}`)
+    .send(userData)
+  return response.body
+}
