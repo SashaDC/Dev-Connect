@@ -1,30 +1,20 @@
-import { usePosts } from '../hooks/useFetchPosts.ts'
-
-function Posts() {
-  const { data, isLoading, error } = usePosts()
-
-  if (isLoading) 
-    return <p> Post is loading.. </p>
-  if (error)
-    return  <p> Beep Bop.. something went wrong loading the post.. </p>
-
-  return (
-    <>
-      <div className="posts">
-        <h1 className="text-3xl font-bold underline">
-          Fullstack Boilerplate - Social Media Posts
-        </h1>
-        <ul>
-          {data?.map((post) => (
-          <li key={post.id}>
-            <h2 className="font-semibold">{post.title}</h2>
-            <p>{post.content}</p>
-            </li>
-           ))}
-        </ul>
-      </div>
-    </>
-  )
+interface PostProps {
+  post: {
+    id: number
+    title: string
+    content: string
+    author?: string
+  }
 }
 
-export default Posts
+export default function Post({ post }: PostProps) {
+  return (
+    <article className="bg-brand border-brand-dark/40 space-y-2 rounded-lg border p-4 shadow-sm transition hover:shadow-md">
+      <h2 className="text-lg font-semibold">{post.title}</h2>
+      <p className="text-sm opacity-80">{post.content}</p>
+      {post.author && (
+        <p className="text-xs opacity-60">Posted by {post.author}</p>
+      )}
+    </article>
+  )
+}

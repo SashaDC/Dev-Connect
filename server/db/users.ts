@@ -25,7 +25,14 @@ export async function getUserByAuthId(auth_id: string) {
   return db('users').where({ auth_id }).first()
 }
 
-export async function updateUser(id, user) {} // Your code ravi
+export async function updateUserInfo(
+  updateInfo: { field: string; value: string },
+  authId: string,
+) {
+  await db('users')
+    .where('auth_id', authId)
+    .update(updateInfo.field, updateInfo.value)
+}
 
 export async function deleteUserById(id) {
   return db('users').where({ id }).delete()

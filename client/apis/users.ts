@@ -12,6 +12,13 @@ export async function getUserById(id: number) {
   return response.body
 }
 
+export async function updateUserInfo(updateInfo: {field: string, value: string}, authId: string): Promise<void> {
+  try {
+    await request.patch(`${rootURL}/`).send({authId: authId, updateInfo: updateInfo})
+  } catch (error) {
+    console.log("Unable to update")
+  }
+
 export async function syncUser({ token, ...userData }) {
   const response = await request
     .post('/api/v1/users/sync')
