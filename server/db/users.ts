@@ -10,9 +10,19 @@ export async function getUserById(id: number | string) {
   return user
 }
 
-export async function addUser(data) {
-  const [id] = await db('users').insert(data)
-  return id
+export async function addUser(data: {
+  auth_id: string
+  email: string
+  username?: string
+  full_name?: string
+  image?: string
+}) {
+  const [id] = await db('users').insert(data).returning('id')
+  return db('users').where({ id }).first()
+}
+
+export async function getUserByAuthId(auth_id: string) {
+  return db('users').where({ auth_id }).first()
 }
 
 export async function updateUser(id, user) {} // Your code ravi
@@ -26,7 +36,7 @@ export async function userCanEdit(id, auth0Id) {
     .where({ id })
     .first()
     .then((user) => {
-      if (user.added_by_user !== auth0Id) {
+      if (!user || user.auth_id !== auth0Id) {
         throw new Error('Unauthorized')
       }
     })

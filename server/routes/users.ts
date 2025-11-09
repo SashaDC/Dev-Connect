@@ -28,9 +28,26 @@ router.get('/:id', async (req, res, next) => {
 })
 
 // POST(add) user =
+router.post('/sync', checkJwt, async (req: JwtRequest, res) => {
+  const authId = req.auth?.sub
+  const { email, username, full_name, image } = req.body
+
+  let user = await db.getUserByAuthId(authId)
+  if (!user) {
+    user = await db.addUser({
+      auth_id: authId,
+      email,
+      username: username || '',
+      full_name: full_name || '',
+      image: image || '',
+    })
+    return res.status(201).json({ user })
+  }
+  return res.json({ user })
+})
 
 // PUT(update) users =
-router.put('/', checkJwt, async (req: JwtRequest, res) => {
+router.put('/:id', checkJwt, async (req: JwtRequest, res) => {
   const { user } = req.body
   const id = Number(req.params.id)
 
