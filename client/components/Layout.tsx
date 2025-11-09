@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 
 export default function Layout() {
   return (
-    <div className="flex min-h-screen flex-col bg-brand-light text-slate-900">
+    <div className="bg-brand-light flex min-h-screen flex-col text-slate-900">
       <header className="bg-brand-dark shadow">
         <NavBar />
       </header>

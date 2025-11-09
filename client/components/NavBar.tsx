@@ -9,8 +9,14 @@ export default function NavBar() {
       <Link className="hover:text-accent transition" to="/groups">
         Groups
       </Link>
-      <Link className="hover:text-accent transition" to="/profile/me">
-        Profile
+      <Link className="hover:opacity-80" to="/groups/new">
+        New Group
+      </Link>
+      <Link className="cursor-not-allowed opacity-50 hover:opacity-80" to="#">
+        My Profile
+      </Link>
+      <Link className="hover:opacity-80" to="/login">
+        Login
       </Link>
     </nav>
   )
