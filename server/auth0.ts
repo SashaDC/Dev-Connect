@@ -5,9 +5,8 @@ import { JwtPayload } from 'jsonwebtoken'
 import jwks from 'jwks-rsa'
 
 // TODO: set the domain and audience (API Identifier)
-const domain = 'https://'
-const audience = 'https://'
-
+const domain = 'https://dev-connect.au.auth0.com'
+const audience = 'https://DevConnect/api'
 const checkJwt = jwt({
   secret: jwks.expressJwtSecret({
     cache: true,
